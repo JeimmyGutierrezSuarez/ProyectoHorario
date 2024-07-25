@@ -12,8 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('perfil_instructors', function (Blueprint $table) {
-            $table->id();
+            $table->id('idPerInstructor'); //Columna que almacena el id del perfil de cada instructor que aparece en el diseñ0o cuuricular
+            $table->string('reqAcademicos'); //Columna que almacena los requisitos academicos del instructor que paarce en el eperfil 
             $table->timestamps();
+
         });
     }
 
