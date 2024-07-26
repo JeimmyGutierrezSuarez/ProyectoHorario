@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('estados', function (Blueprint $table) {
-            $table->id('idEstado'); //Id Estado
-            $table->string('descripcion'); //Descripcion del estado
+            $table->id('idEstado'); //Columna que almacena el Id Estado
+            $table->string('descripcion',10); //Columna que almacena la Descripcion del estado (activo o inactivo)
             $table->timestamps();
         });
     }

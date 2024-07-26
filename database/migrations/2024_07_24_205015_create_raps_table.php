@@ -12,9 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('raps', function (Blueprint $table) {
-            $table->id('idRap');
+            $table->id('idRap'); //Columna que almacena el id del Rap
             $table->string('descripcion'); //Columna que almacena la descripcion de el rap 
-            $table->string('idCompetencia'); //Columna que almacena el id de la competencia este es llave foranea que viene de la tabla competencia 
+            $table->string('idCompetencia'); //Columna que almacena el id de la competencia - llave foranea que viene de la tabla competencia
+            //Definicion de las llaves foranes
+            $table->unsignedBigInteger('idCompetencia')->references('competencias')->on('id')->onDelete('cascade');
             $table->timestamps();
 
         });

@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tipo_ambientes', function (Blueprint $table) {
-            $table->id(); //Id del ambiente
-            $table->string('tipAmbiente'); //Tipo ambiente () 
+            $table->id('IdTipAmbiente'); //Columna que almacena el Id tipo de ambiente
+            $table->string('tipAmbiente'); //Columna que almacena la descripcion de el Tipo ambiente() 
             $table->timestamps(); 
         });
     }

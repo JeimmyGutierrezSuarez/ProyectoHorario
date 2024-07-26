@@ -12,11 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ambientes', function (Blueprint $table) {
-            $table->id(); //Id ambiente
+            $table->id('idAmbiente'); //Id ambiente
             $table->string('nomAmbiente'); //nombre del ambiente
-            $table->string('idTipAmbiente'); //id del tipo de ambientte el cual le pertenece
-            $table->string('idSede'); //id sede esta es una llave foranea de la tabla sede
-            $table->string('idEstado'); //Id estado esta es una llave foranea que esta en la tabla estado
+            $table->unsignedBigInteger('idTipAmbiente'); //id del tipo de ambiente el cual le pertenece
+            $table->unsignedBigInteger('idSede'); //id sede esta es una llave foranea de la tabla sede
+            $table->unsignedBigInteger('idEstado'); //Id estado esta es una llave foranea que esta en la tabla estado
+           //Definicion de llaves foraneas
+            $table->foreign('idTipAmbiente')->references('id')->on('ambientes')->onDelete('cascade'); //definisicion de llave foranea 
+            $table->foreign('idSede')->references('id')->on('sedes')->onDelete('cascada');
+            $table->foreign('idEstado')->references('id')->on('estados')->onDelete('cascada');
         });
     }
 
@@ -31,5 +35,6 @@ return new class extends Migration
 
     
  //modelo controlador migracion
+
 };
 

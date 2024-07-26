@@ -12,10 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sedes', function (Blueprint $table) {
-            $table->id();//Id de la sede
-            $table->string('nombre',30); //Nombre de la sede 
-            $table->string('ubicacion',40); //Ubicacion de la sede, uan descricpcion de donde queda
-            $table->string('idEstado',10); //Id del estado de la sede, esta es uan llave foranea de la tabla estado 
+            $table->id('idSede');//Id de la sede
+            $table->string('nombre',30); //Columna que almacena el nombre de la sede 
+            $table->string('ubicacion',40); //Columna que almacena la ubicacion de la sede, uan descricpcion de donde queda
+            $table->string('idEstado',10); //Columna que almacena el id del estado de la sede - llave foranea de la tabla estado 
+            //Definicion de llaves foraneas
+            $table->unsignedBigInteger('idEstado')->references('estados')->on('id')->onDelete('cascade');
             $table->timestamps();
         });
     }

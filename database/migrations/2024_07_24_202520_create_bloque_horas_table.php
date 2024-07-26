@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bloque_horas', function (Blueprint $table) {
-            $table->id(); //Id Hora la cual con este se va a identificar la hora
-            $table->time('horInicio'); //Hora inicio la cual empieza el horario
-            $table->string('horFinal'); //Hora fin la cual se termina el horario
+            $table->id('idHora'); //Columna que almacena el Id Hora la cual con este se va a identificar la hora
+            $table->time('horInicio'); //Columna que almacena la Hora inicio la cual empieza el horario
+            $table->time('horFinal'); //Columna que almacena la Hora fin la cual se termina el horario
             $table->timestamps();
         });
     }
