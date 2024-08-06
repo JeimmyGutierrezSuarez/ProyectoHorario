@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('ambientes', function (Blueprint $table) {
             $table->id('idAmbiente'); //Id ambiente
-            $table->string('nomAmbiente'); //nombre del ambiente
-            $table->unsignedBigInteger('idTipAmbiente'); //id del tipo de ambiente el cual le pertenece
+            $table->string('nombreAmbiente'); //nombre del ambiente
+            $table->unsignedBigInteger('idTipoAmbiente'); //id del tipo de ambiente el cual le pertenece
             $table->unsignedBigInteger('idSede'); //id sede esta es una llave foranea de la tabla sede
             $table->unsignedBigInteger('idEstado'); //Id estado esta es una llave foranea que esta en la tabla estado
-           //Definicion de llaves foraneas
-            $table->foreign('idTipAmbiente')->references('id')->on('ambientes')->onDelete('cascade'); //definisicion de llave foranea 
+           
+            //Definicion de llaves foraneas
+            $table->foreign('idTipoAmbiente')->references('id')->on('ambientes')->onDelete('cascade'); //definisicion de llave foranea 
             $table->foreign('idSede')->references('id')->on('sedes')->onDelete('cascada');
             $table->foreign('idEstado')->references('id')->on('estados')->onDelete('cascada');
         });

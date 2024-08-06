@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('administradors', function (Blueprint $table) {
-            $table->id('idAdministrador');
-            $table->char('cedula',10);
-            $table->string('nombresAdministrador', 20);
-            $table->string('apellidosAdministrador', 20);
-            $table->char('telefono',9);        
-            $table->char('contraseña',20);
+            $table->id('idAdministrador');  //Se deine el id del admi
+            $table->char('cedula',10);  //campo cedula
+            $table->string('nombresAdministrador', 20); //se define el campo para los nombres del administrador
+            $table->string('apellidosAdministrador', 20); //se define el campo para los apellidos del administrador
+            $table->char('telefono',9);        //Se define el campo para el telefono
+            $table->char('contraseña',20); //Se define el campo para la contraseña 
             $table->timestamps();
         });
     }

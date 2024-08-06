@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tipo_ambientes', function (Blueprint $table) {
-            $table->id('IdTipoAmbiente'); //Columna que almacena el Id tipo de ambiente
-            $table->string('descripcion'); //Columna que almacena la descripcion de el Tipo ambiente() 
-            $table->timestamps(); 
+        Schema::create('reds', function (Blueprint $table) {
+            $table->id('idRed');
+            $table->string('descripcion');
+            $table->timestamps();
         });
     }
 
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tipo_ambientes');
+        Schema::dropIfExists('reds');
     }
 };

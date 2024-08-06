@@ -13,14 +13,18 @@ return new class extends Migration
     {
         Schema::create('horarios', function (Blueprint $table) {
             $table->id('idHorario'); //Columna que almacena el id del horario
-            $table->string('idFicha'); //Columna que almacena el id ficha - llave foranea  de la tabla ficha
-            $table->string('idBloque'); //Columna que almacena el id bloque -llave foranea de la tabla bloque
-            $table->string('idCompetencia'); //Columna que almacena el id competencia - Llave foranea de la tabla Competencia
+            $table->('numeroFicha'); //Columna que almacena el id ficha - llave foranea  de la tabla ficha
             $table->string('nivel'); //Columna que almacena el nivel del programa
-            $table->string('verProrama'); //Columna que almacena la version del programa 
-            $table->string('cedula'); //Columna que almacena la cedula del instructor - llave foranea de la tabla instructor
-            $table->string('idAmbiente'); //Columna que almacena id ambiente - llave foranea de la tabla ambiente
-            $table->string('idSede'); //Columna que almacena id sede - llave foranea de la tabla sede 
+            $table->('versionProrama'); //Columna que almacena la version del programa
+            $table->unsignedBigInteger('idBloque'); //Columna que almacena el id bloque -llave foranea de la tabla bloque
+            $table->('idSede'); //Columna que almacena id sede - llave foranea de la tabla sede
+            $table->('idAmbiente'); //Columna que almacena id ambiente - llave foranea de la tabla ambiente
+            $table->('codigoPrograma'); //columna que almacena codigo del programa
+            $table->('idRap'); //Columna que almacena el id rap - Llave foranea de la tabla resultados de aprendizaje
+            $table->('idJornada'); //Columna que almacena el id de la jornada
+            $table->('cedula'); //Columna que almacena la cedula del instructor - llave foranea de la tabla instructor
+            
+             
 
             //Definicion de las llaves foraneas
             $table->unsignedBigInteger('idFicha')->references('fichas')->on('id')->onDelete('cascade'); 

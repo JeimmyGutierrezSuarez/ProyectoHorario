@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id('idSede');//Id de la sede
             $table->string('nombre',30); //Columna que almacena el nombre de la sede 
             $table->string('ubicacion',40); //Columna que almacena la ubicacion de la sede, uan descricpcion de donde queda
-            $table->string('idEstado',10); //Columna que almacena el id del estado de la sede - llave foranea de la tabla estado 
+            $table->unsignedBigInteger('idEstado',10); //Columna que almacena el id del estado de la sede - llave foranea de la tabla estado 
+           
             //Definicion de llaves foraneas
-            $table->unsignedBigInteger('idEstado')->references('estados')->on('id')->onDelete('cascade');
+            $table->foreign('idEstado')->references('idEstado')->on('id')->onDelete('cascade');
             $table->timestamps();
         });
     }

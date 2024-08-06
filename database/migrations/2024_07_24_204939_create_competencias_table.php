@@ -12,16 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('competencias', function (Blueprint $table) {
-            $table->id('idCompetencia'); //Columna que almacena el id de la competencia
-            $table->string('norCompetencia'); //Columna que almacena la norma de la competencia
-            $table->string('codCompetencia'); //Columna que almacena el codigo de la competencia 
-            $table->string('nomCompetencia'); //Columna que almacena el nombre de la competencia 
-            $table->string('durCompetencia'); //Columna que almacena la duracion de la competencia
-            $table->unsignedBigInteger('disCurricular'); //Columna que almacena el id del diseño curricular esto es ujan llave foranea que viene de la tabla diseno curricular 
-            
+            $table->id('codigoCompetencia'); //Columna que almacena el codigo de la competencia
+            $table->string('codigoprograma',8); //Columna que alamacena el codigo del programa 
+            $table->string('normaCompetencia'); //Columna que almacena la norma de la competencia
+            $table->string('nombreCompetencia'); //Columna que almacena el nombre de la competencia 
+            $table->string('duracionCompetencia'); //Columna que almacena la duracion de la competencia
+            //$table->unsignedBigInteger('disenoCurricular'); //Columna que almacena el id del diseño curricular esto es ujan llave foranea que viene de la tabla diseno curricular 
             //Se define la llave foranea
-            $table->foreign('idDisCurricular')->references('id')->on('disenoCurricular')->onDelete('cascade');
+            //$table->foreign('idDisenoCurricular')->references('id')->on('disenoCurricular')->onDelete('cascade');
+            
+            //Definicion de llaves foraneas
+            $table->foreign('codigoPrograma')->references('codigoPrograma')->on('diseno_curriculars')->onDelete('cascade');
+            
             $table->timestamps();
+
         });
     }
 
