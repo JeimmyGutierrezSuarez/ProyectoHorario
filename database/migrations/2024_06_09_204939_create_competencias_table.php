@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('competencias', function (Blueprint $table) {
             $table->id('codigoCompetencia'); //Columna que almacena el codigo de la competencia
-            $table->string('codigoprograma',8); //Columna que alamacena el codigo del programa 
+            $table->unsignedBigInteger('codigoPrograma',8); //Columna que alamacena el codigo del programa 
             $table->string('normaCompetencia'); //Columna que almacena la norma de la competencia
             $table->string('nombreCompetencia'); //Columna que almacena el nombre de la competencia 
             $table->string('duracionCompetencia'); //Columna que almacena la duracion de la competencia

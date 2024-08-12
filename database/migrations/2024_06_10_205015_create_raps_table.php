@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('raps', function (Blueprint $table) {
             $table->id('idRap'); //Columna que almacena el id del Rap
+            $table->string('descripcion'); //Columna que almacena la descripcion de el rap
             $table->unsignedBigInteger('codigoCompetencia'); //Columna que almacena el id de la competencia - llave foranea que viene de la tabla competencia
-            $table->string('descripcion'); //Columna que almacena la descripcion de el rap 
+             
 
             //Definicion de las llaves foranes
             $table->foreign('codigoCompetencia')->references('codigoCompetencias')->on('competencias')->onDelete('cascade');

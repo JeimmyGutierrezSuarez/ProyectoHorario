@@ -19,9 +19,9 @@ return new class extends Migration
             $table->unsignedBigInteger('idEstado'); //Id estado esta es una llave foranea que esta en la tabla estado
            
             //Definicion de llaves foraneas
-            $table->foreign('idTipoAmbiente')->references('id')->on('ambientes')->onDelete('cascade'); //definisicion de llave foranea 
-            $table->foreign('idSede')->references('id')->on('sedes')->onDelete('cascada');
-            $table->foreign('idEstado')->references('id')->on('estados')->onDelete('cascada');
+            $table->foreign('idTipoAmbiente')->references('idTipoAmbiente')->on('tipo_ambientes')->onDelete('cascade'); //definisicion de llave foranea 
+            $table->foreign('idSede')->references('idSede')->on('sedes')->onDelete('cascada');
+            $table->foreign('idEstado')->references('idEstado')->on('estados')->onDelete('cascada');
         });
     }
 

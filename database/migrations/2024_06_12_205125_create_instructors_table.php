@@ -22,8 +22,8 @@ return new class extends Migration
             $table->unsignedBigInteger('codigoCompetencia'); //Columna que almacena el id de la competencia, esta es una llava foranea que viene de la tabla Competencia
             
             //Definicion de las llaves foraneas 
-            $table->unsignedBigInteger('idCompetencia')->references('competencias')->on('id')->onDelete('cascade'); 
-            $table->unsignedBigInteger('codigoCompetencia')->refences('codigoCompetencia')->on('id')->onDelete('cascade');
+            $table->foreign('idCompetencia')->references('idCompetencias')->on('id')->onDelete('cascade'); 
+            $table->foreign('codigoCompetencia')->refences('codigoCompetencia')->on('id')->onDelete('cascade');
             $table->timestamps();
         });
     }

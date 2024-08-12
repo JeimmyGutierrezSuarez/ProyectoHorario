@@ -17,12 +17,12 @@ return new class extends Migration
             $table->string('experienciaLaboral'); //Columna que alamacena la experiecnia que requiere tener el instructor para dictar dicha competencia
             $table->string('experienciaDocencia');
             $table->string('competencias'); //Columna que almacena el nombre de la competencia que el requiere
-            $table->unsignedBigInteger('codigoCompetencia'); //Columna que almacena el id de la competencia es una llave foranea viene de la tabla competencia - viene de la tabla competencia 
+            #$table->unsignedBigInteger('codigoCompetencia'); //Columna que almacena el id de la competencia es una llave foranea viene de la tabla competencia - viene de la tabla competencia 
             $table->timestamps();
 
 
             //Definicion de las llaves foraneas
-            $table->foreign('codigoCompetencia')->references('codigoCompetencia')->on('competencias')->onDelete('cascade');
+            #$table->foreign('codigoCompetencia')->references('codigoCompetencia')->on('competencias')->onDelete('cascade');
             
         });
     }
