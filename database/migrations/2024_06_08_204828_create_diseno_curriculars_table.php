@@ -20,14 +20,14 @@ return new class extends Migration
             $table->string('versionPrograma',10); //Columna que almacena la Version del programa
             $table->date('fechaInicio'); //Columna que almacena la fecha de inicio del programa
             $table->date('fechaFin'); //Columna que almacena la fechja final del programa
-            $table->integer('duracionPrograma');// Columna que almacena la duracion del programa
+            $table->unsignedSmallInteger('duracionPrograma');// Columna que almacena la duracion del programa
             $table->string('tipoPrograma',15); //Columna que almacena el tipo de programa (titulada o otra)
             $table->unsignedBigInteger('idNivel'); //Columna que almacena el nivel del progrma (tecnico o tecnologo)
             $table->timestamps();
 
             //Definiendo llaves primarias codigoAPrograma y versionPrograma
             $table->primary(['codigoPrograma','versionPrograma']);
-
+            $table->unique('codigoPrograma');
             //DEfiniendo llaves foraneas 
             $table->foreign('idRed')->references('idRed')->on('reds');
             $table->foreign('idArea')->references('idArea')->on('areas');

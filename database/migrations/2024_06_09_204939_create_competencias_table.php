@@ -12,11 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('competencias', function (Blueprint $table) {
-            $table->id('codigoCompetencia'); //Columna que almacena el codigo de la competencia
-            $table->unsignedBigInteger('codigoPrograma',8); //Columna que alamacena el codigo del programa 
-            $table->string('normaCompetencia'); //Columna que almacena la norma de la competencia
-            $table->string('nombreCompetencia'); //Columna que almacena el nombre de la competencia 
-            $table->string('duracionCompetencia'); //Columna que almacena la duracion de la competencia
+            $table->string('normaCompetencia',10)->primary(); //Columna que almacena el codigo de la competencia
+            $table->string('codigoPrograma',8); //Columna que alamacena el codigo del programa 
+            $table->string('nombreCompetencia',70); //Columna que almacena el nombre de la competencia 
+            $table->unsignedSmallInteger('duracionCompetencia'); //Columna que almacena la duracion de la competencia
             //$table->unsignedBigInteger('disenoCurricular'); //Columna que almacena el id del diseño curricular esto es ujan llave foranea que viene de la tabla diseno curricular 
             //Se define la llave foranea
             //$table->foreign('idDisenoCurricular')->references('id')->on('disenoCurricular')->onDelete('cascade');
