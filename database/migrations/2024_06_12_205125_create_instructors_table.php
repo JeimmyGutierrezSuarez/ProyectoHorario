@@ -23,6 +23,7 @@ return new class extends Migration
             //Definicion de las llaves foraneas 
             #$table->foreign('idCompetencia')->references('idCompetencias')->on('id')->onDelete('cascade'); 
             $table->foreign('normaCompetencia')->references('normaCompetencia')->on('competencias')->onDelete('cascade');
+            $table->foreign('idPerfilInstructor')->references('idPerfilInstructor')->on('perfil_instructors')->onDelete('cascade');
             $table->timestamps();
         });
     }
