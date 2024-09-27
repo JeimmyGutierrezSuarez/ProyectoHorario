@@ -24,9 +24,8 @@ return new class extends Migration
             $table->string('codigoPrograma',8); //columna que almacena codigo del programa
             $table->unsignedBigInteger('idRap'); //Columna que almacena el id rap - Llave foranea de la tabla resultados de aprendizaje
             $table->unsignedBigInteger('idJornada'); //Columna que almacena el id de la jornada
-            $table->string('cedula',10); //Columna que almacena la cedula del instructor - llave foranea de la tabla instructor
+            $table->string('numeroDocumento',10); //Columna que almacena la cedula del instructor - llave foranea de la tabla instructor
             
-             
 
             //Definicion de las llaves foraneas
             $table->foreign('numeroFicha')->references('numeroFicha')->on('fichas')->onDelete('cascade'); 
@@ -38,7 +37,7 @@ return new class extends Migration
             $table->foreign('codigoPrograma')->references('codigoPrograma')->on('diseno_curriculars')->onDelete('cascade');
             $table->foreign('idRap')->references('idRap')->on('raps')->onDelete('cascade');
             $table->foreign('idJornada')->references('idJornada')->on('jornadas')->onDelete('cascade');
-            $table->foreign('cedula')->references('cedula')->on('instructors')->onDelete('cascade');
+            $table->foreign('numeroDocumento')->references('numeroDocumento')->on('instructors')->onDelete('cascade');
         
             $table->timestamps();
         });

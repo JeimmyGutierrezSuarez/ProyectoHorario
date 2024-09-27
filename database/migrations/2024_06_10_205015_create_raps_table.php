@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('descripcion',100); //Columna que almacena la descripcion de el rap
             $table->string('normaCompetencia',10); //Columna que almacena el id de la competencia - llave foranea que viene de la tabla competencia
              
-
             //Definicion de las llaves foranes
             $table->foreign('normaCompetencia')->references('normaCompetencia')->on('competencias')->onDelete('cascade');
             $table->timestamps();
